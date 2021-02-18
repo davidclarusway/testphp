@@ -63,7 +63,6 @@ jobs:
       - name: Create a LAMP server
         run: doctl compute droplet create LAMPserver --size s-1vcpu-1gb --image LAMP --region nyc1 --ssh-keys 4d:23:e6:e4:8c:17:d2:cf:89:47:36:b5:c7:33:40:4e --enable-backups
       - name: Deployment
-        needs: Create a LAMP server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
